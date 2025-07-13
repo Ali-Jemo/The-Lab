@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Lab - خطة العمل وفرص الاستثمار</title>
+    <link rel="stylesheet" href="public/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="dark-mode">
+    <!-- عناصر متحركة في الخلفية -->
+    <div class="moving-background">
+        <div class="shape shape1"></div>
+        <div class="shape shape2"></div>
+        <div class="shape shape3"></div>
+        <div class="shape shape4"></div>
+        <div class="shape shape5"></div>
+    </div>
+
+    <header class="sticky-header">
+        <div class="container">
+            <div class="logo">The Lab</div>
+            <nav>
+                <a href="#intro">عن المشروع</a>
+                <a href="#business-plan">خطة العمل</a>
+                <a href="#charts">تحليلات</a>
+                <a href="#investor">للمستثمرين</a>
+                <a href="#timeline">المراحل</a>
+                <a href="#contact">تواصل معنا</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="intro" class="hero hero-investor">
+        <div class="hero-content hero-centered">
+            <h1 class="main-title">The Lab</h1>
+            <p class="subtitle">مختبرك الخاص للنكهات - أول مساحة تفاعلية للطعام في كربلاء.<br>متجر عصري، مطبخ ذاتي، مجتمع شبابي نابض.</p>
+            <div class="hero-buttons">
+                <a href="#investor" class="btn btn-primary">فرصة استثمارية</a>
+                <a href="#business-plan" class="btn btn-cta">خطة العمل</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="business-plan" class="business-section">
+        <div class="container">
+            <h2>خطة العمل المتكاملة</h2>
+            
+            <!-- أزرار التصفية والبحث -->
+            <div class="interactive-controls">
+                <div class="search-box">
+                    <input type="text" id="business-search" placeholder="ابحث في خطة العمل..." class="search-input">
+                    <button type="button" id="search-btn" class="search-btn">🔍</button>
+                </div>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">الكل</button>
+                    <button class="filter-btn" data-filter="summary">الملخص التنفيذي</button>
+                    <button class="filter-btn" data-filter="vision">الرؤية والرسالة</button>
+                    <button class="filter-btn" data-filter="features">ميزات المشروع</button>
+                    <button class="filter-btn" data-filter="costs">التكاليف</button>
+                </div>
+            </div>
+
+            <div class="business-block interactive-block" data-category="summary">
+                <div class="block-header">
+                    <h3>الملخص التنفيذي</h3>
+                    <div class="block-actions">
+                        <button class="action-btn" data-action="details">تفاصيل أكثر</button>
+                        <button class="action-btn" data-action="chart" data-chart-id="summary-chart">رسم بياني</button>
+                    </div>
+                </div>
+                <div class="block-content">
+                    <div class="executive-flex-wrap">
+                        <div class="executive-text-col">
+                            <p>
+                                The Lab هو مشروع مبتكر في قلب كربلاء يجمع بين متجر عصري للمنتجات الغذائية الفريدة ومطبخ ذاتي تفاعلي يتيح للشباب والطلاب تجربة الطهي بأنفسهم ضمن أجواء اجتماعية حديثة. يهدف المشروع إلى تلبية الطلب المتزايد على التجارب الغذائية الجديدة، مع تقديم منتجات نادرة وورش عمل وفعاليات شهرية. يتميز المشروع بمرونة عالية في التشغيل، ونموذج عضوية يضمن ولاء العملاء، وفرص توسع مستقبلية في مدن أخرى. العائد السنوي المتوقع 35% مع استرداد رأس المال خلال سنتين تقريباً، ويستهدف المشروع تحقيق حصة سوقية 10% خلال أول سنتين من التشغيل.
+                            </p>
+                            <div class="hidden-details" style="display: none;">
+                                <div class="metrics-grid">
+                                    <div class="metric-item">
+                                        <span class="metric-value">35%</span>
+                                        <span class="metric-label">العائد السنوي</span>
+                                    </div>
+                                    <div class="metric-item">
+                                        <span class="metric-value">24 شهر</span>
+                                        <span class="metric-label">فترة الاسترداد</span>
+                                    </div>
+                                    <div class="metric-item">
+                                        <span class="metric-value">10%</span>
+                                        <span class="metric-label">حصة السوق المستهدفة</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="executive-chart-col">
+                            <canvas id="summary-chart" class="interactive-chart" data-chart-type="doughnut" style="display: none;"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="business-block interactive-block" data-category="vision">
+                <div class="block-header">
+                    <h3>الرؤية والرسالة</h3>
+                    <div class="block-actions">
+                        <button class="action-btn" data-action="details">تفاصيل أكثر</button>
+                        <button class="action-btn" data-action="chart" data-chart-id="vision-chart">رسم بياني</button>
+                    </div>
+                </div>
+                <div class="block-content">
+                    <div class="vision-flex-wrap">
+                        <div class="vision-cards-col">
+                            <div class="vision-mission-grid">
+                                <div class="vision-card">
+                                    <h4>🎯 الرؤية</h4>
+                                    <p>أن نصبح الوجهة الأولى للشباب في كربلاء لتجربة الطعام العصري والتعلم الاجتماعي، مع بناء مجتمع شبابي متفاعل حول ثقافة الطهي.</p>
+                                </div>
+                                <div class="mission-card">
+                                    <h4>📋 الرسالة</h4>
+                                    <p>تمكين الشباب من الاستمتاع بالأكل وتجربة الطهي بجودة عالية وسعر مناسب، مع توفير بيئة آمنة ومحفزة للإبداع والتواصل.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="vision-chart-col">
+                            <canvas id="vision-chart" class="interactive-chart" data-chart-type="bar" style="display: none;"></canvas>
+                        </div>
+                    </div>
+                    <div class="hidden-details" style="display: none;">
+                        <div class="objectives-list">
+                            <h4>الأهداف الاستراتيجية:</h4>
+                            <ul>
+                                <li>تحقيق 3000 زائر شهرياً خلال السنة الأولى</li>
+                                <li>بناء مجتمع من 500 عضو نشط</li>
+                                <li>إطلاق 12 ورشة عمل سنوياً</li>
+                                <li>التوسع إلى مدينتين إضافيتين خلال 3 سنوات</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="business-block interactive-block" data-category="features">
+                <div class="block-header">
+                    <h3>ميزات المشروع</h3>
+                    <div class="block-actions">
+                        <button class="action-btn" data-action="details">تفاصيل أكثر</button>
+                        <button class="action-btn" data-action="chart" data-chart-id="features-chart">رسم بياني</button>
+                    </div>
+                </div>
+                <div class="block-content">
+                    <div class="features-flex-wrap">
+                        <div class="features-cards-col">
+                            <div class="features-grid">
+                                <div class="feature-item" data-feature="store">
+                                    <div class="feature-icon">🛒</div>
+                                    <h4>متجر عصري</h4>
+                                    <p>منتجات غذائية نادرة ومستوردة غير متوفرة في الأسواق التقليدية</p>
+                                </div>
+                                <div class="feature-item" data-feature="kitchen">
+                                    <div class="feature-icon">👨‍🍳</div>
+                                    <h4>مطبخ ذاتي</h4>
+                                    <p>تجربة تفاعلية للطهي مع إرشادات احترافية</p>
+                                </div>
+                                <div class="feature-item" data-feature="workshops">
+                                    <div class="feature-icon">🎓</div>
+                                    <h4>ورش عمل</h4>
+                                    <p>فعاليات شهرية ومسابقات لبناء مجتمع شبابي</p>
+                                </div>
+                                <div class="feature-item" data-feature="membership">
+                                    <div class="feature-icon">👥</div>
+                                    <h4>نظام عضوية</h4>
+                                    <p>خصومات خاصة وامتيازات حصرية للعملاء</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="features-chart-col">
+                            <canvas id="features-chart" class="interactive-chart" data-chart-type="radar" style="display: none;"></canvas>
+                        </div>
+                    </div>
+                    <div class="hidden-details" style="display: none;">
+                        <div class="feature-details">
+                            <h4>تفاصيل إضافية:</h4>
+                            <ul>
+                                <li>مزيج فريد من المتجر والمطبخ الذاتي التفاعلي، يمنح العملاء حرية اختيار وتجربة وصفاتهم الخاصة.</li>
+                                <li>استهداف مباشر لفئة الشباب والطلاب، مع برامج عضوية وخصومات خاصة للمجموعات والجامعات.</li>
+                                <li>منتجات غذائية نادرة ومستوردة غير متوفرة في الأسواق التقليدية، مع تحديث دوري لقائمة المنتجات.</li>
+                                <li>ورش عمل شهرية للطهي، فعاليات ترفيهية ومسابقات، وبناء مجتمع شبابي نشط حول العلامة التجارية.</li>
+                                <li>إمكانية التوسع مستقبلاً إلى مدن عراقية أخرى أو إطلاق منصة رقمية للحجوزات والتوصيل.</li>
+                                <li>شراكات محتملة مع جامعات، مدارس، ومؤسسات شبابية لتعزيز الانتشار والتأثير المجتمعي.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="business-block interactive-block" data-category="costs">
+                <div class="block-header">
+                    <h3>تفصيل التكاليف</h3>
+                    <div class="block-actions">
+                        <button class="action-btn" data-action="details">تفاصيل أكثر</button>
+                        <button class="action-btn" data-action="chart" data-chart-id="costs-chart">رسم بياني</button>
+                    </div>
+                </div>
+                <div class="block-content">
+                    <div class="costs-flex-wrap">
+                        <div class="costs-cards-col">
+                            <div class="costs-breakdown costs-beautified">
+                                <div class="cost-item cost-establishment">
+                                    <div class="cost-icon">🏢</div>
+                                    <div class="cost-header">
+                                        <span class="cost-label">تكاليف التأسيس</span>
+                                        <span class="cost-percentage">30%</span>
+                                    </div>
+                                    <div class="cost-bar">
+                                        <div class="cost-fill" style="width: 30%"></div>
+                                    </div>
+                                    <span class="cost-amount">15,000,000 د.ع</span>
+                                </div>
+                                <div class="cost-item cost-equipment">
+                                    <div class="cost-icon">🛠️</div>
+                                    <div class="cost-header">
+                                        <span class="cost-label">المعدات والتجهيزات</span>
+                                        <span class="cost-percentage">40%</span>
+                                    </div>
+                                    <div class="cost-bar">
+                                        <div class="cost-fill" style="width: 40%"></div>
+                                    </div>
+                                    <span class="cost-amount">20,000,000 د.ع</span>
+                                </div>
+                                <div class="cost-item cost-operating">
+                                    <div class="cost-icon">💼</div>
+                                    <div class="cost-header">
+                                        <span class="cost-label">رأس مال تشغيلي</span>
+                                        <span class="cost-percentage">20%</span>
+                                    </div>
+                                    <div class="cost-bar">
+                                        <div class="cost-fill" style="width: 20%"></div>
+                                    </div>
+                                    <span class="cost-amount">10,000,000 د.ع</span>
+                                </div>
+                                <div class="cost-item cost-marketing">
+                                    <div class="cost-icon">📢</div>
+                                    <div class="cost-header">
+                                        <span class="cost-label">تسويق وإطلاق</span>
+                                        <span class="cost-percentage">10%</span>
+                                    </div>
+                                    <div class="cost-bar">
+                                        <div class="cost-fill" style="width: 10%"></div>
+                                    </div>
+                                    <span class="cost-amount">5,000,000 د.ع</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="costs-chart-col">
+                            <canvas id="costs-chart" class="interactive-chart" data-chart-type="pie" style="display: none;"></canvas>
+                        </div>
+                    </div>
+                    <div class="hidden-details" style="display: none;">
+                        <div class="cost-details">
+                            <h4>تفاصيل التكاليف:</h4>
+                            <ul>
+                                <li>تكاليف التأسيس (ديكور وتجهيزات ورخص): تمثل 20-40% من رأس المال الكلي (أي 10-20 مليون د.ع لمشروع برأس مال 50 مليون د.ع)، وتشمل تجهيز المقر، شراء معدات المطبخ، أنظمة الأمان، وتكاليف الرخص والتصاميم الداخلية.</li>
+                                <li>تكاليف التشغيل الشهرية (إيجار، رواتب، مواد أولية، كهرباء): تتراوح بين 2-6 مليون د.ع شهرياً، وتشمل رواتب 4-6 موظفين، إيجار موقع مميز، مواد غذائية مستوردة، وكهرباء ومصاريف صيانة.</li>
+                                <li>توقعات التكاليف قابلة للتغير حسب حجم المشروع والموقع، مع إمكانية تقليل التكاليف عبر الشراكات أو التفاوض مع الموردين.</li>
+                                <li>يوجد هامش ربح جيد بسبب ارتفاع متوسط الإنفاق للعميل الواحد مقارنة بالمشاريع التقليدية.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="charts" class="business-section">
+        <div class="container">
+            <h2>تحليلات ورسوم بيانية</h2>
+            <div class="business-block">
+                <h3>الفئة المستهدفة</h3>
+                <canvas id="audienceChart" width="300" height="300"></canvas>
+            </div>
+            <div class="business-block">
+                <h3>الربح السنوي المتوقع</h3>
+                <canvas id="revenueChart" width="400" height="250"></canvas>
+            </div>
+            <div class="business-block">
+                <h3>تحليل نقطة التعادل</h3>
+                <canvas id="breakEvenChart" width="400" height="250"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم جديد للمستثمرين -->
+    <section id="investor" class="investor-section">
+        <div class="container">
+            <h2>فرصة استثمارية مميزة</h2>
+            <div class="investor-grid">
+                <div class="investor-card">
+                    <div class="investor-icon">💰</div>
+                    <h3>عائد استثماري</h3>
+                    <p class="highlight">35% سنوياً</p>
+                    <p>استرداد رأس المال خلال سنتين تقريباً</p>
+                    <!-- نظام التصنيف -->
+                    <div class="rating-container" id="investment-rating"></div>
+                </div>
+                <div class="investor-card">
+                    <div class="investor-icon">📈</div>
+                    <h3>نمو متوقع</h3>
+                    <p class="highlight">20-30% سنوياً</p>
+                    <p>معدل نمو سنوي مستدام في حال نجاح المشروع</p>
+                    <!-- نظام التقدم -->
+                    <div class="progress-container" id="growth-progress"></div>
+                </div>
+                <div class="investor-card">
+                    <div class="investor-icon">🔄</div>
+                    <h3>دورة رأس المال</h3>
+                    <p class="highlight">24 شهر</p>
+                    <p>فترة استرداد رأس المال بالكامل</p>
+                    <!-- نظام التصنيف -->
+                    <div class="rating-container" id="cycle-rating"></div>
+                </div>
+            </div>
+            
+            <!-- زر تفاعلي متقدم -->
+            <div class="advanced-actions">
+                <button class="btn-advanced" onclick="showInvestmentDetails()">
+                    تفاصيل الاستثمار
+                </button>
+                <button class="btn-advanced" onclick="showContactModal()">
+                    تواصل معنا
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم حاسبة الاستثمار -->
+    <section id="investment-calculator" class="business-section">
+        <div class="container">
+            <h2>حاسبة العائد الاستثماري</h2>
+            <div class="business-block">
+                <p>
+                    توفر لك هذه الأداة التفاعلية إمكانية حساب العائد المتوقع لاستثمارك في مشروع The Lab بسهولة وشفافية، بناءً على رأس المال وعدد سنوات الاستثمار. يمكنك تعديل السيناريوهات لتقدير أرباحك المستقبلية بدقة، مما يساعدك في اتخاذ قرار استثماري واقعي ومدروس.
+                </p>
+                <ul>
+                    <li>سهولة الاستخدام: أدخل المبلغ وعدد السنوات واحصل فوراً على النتائج.</li>
+                    <li>شفافية الأرقام: تعتمد الحاسبة على نسب واقعية مستندة لدراسات السوق العراقي.</li>
+                    <li>تعديل السيناريو: يمكنك تجربة سيناريوهات مختلفة لمعرفة تأثير زيادة أو تقليل الاستثمار أو مدة الاستثمار.</li>
+                    <li>مقارنة العائد مع مشاريع تقليدية: ستلاحظ أن العائد المتوقع أعلى من المتوسط في السوق التقليدي، مع هامش مخاطرة مدروس.</li>
+                    <li>مساعدة المستثمر في التخطيط المالي وتقدير فترة استرداد رأس المال.</li>
+                    <li>إمكانية طباعة النتائج أو حفظها كملف PDF لمشاركتها مع الشركاء أو الجهات التمويلية.</li>
+                    <li>حفظ السيناريوهات المفضلة للرجوع إليها لاحقاً أو لمقارنتها مع سيناريوهات أخرى.</li>
+                    <li>مقارنة بين سيناريوهين مختلفين (مثلاً: استثمار 10 مليون د.ع لمدة سنتين مقابل 20 مليون د.ع لمدة 3 سنوات).</li>
+                    <li>عرض رسم بياني صغير يوضح تطور العائد السنوي بشكل بصري.</li>
+                    <li>دعم العملات: إمكانية عرض النتائج بالدينار العراقي أو الدولار الأمريكي حسب رغبتك.</li>
+                    <li>توضيح أثر زيادة مدة الاستثمار على العائد النهائي بشكل تفاعلي.</li>
+                </ul>
+                <form id="calc-form" class="calc-form">
+                    <div class="form-group">
+                        <label for="amount">المبلغ المستثمر:</label>
+                        <input type="number" id="amount" min="1000000" step="100000" placeholder="أدخل المبلغ" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="years">عدد السنوات:</label>
+                        <input type="number" id="years" min="1" max="10" value="3" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="extra-cost">مصاريف سنوية إضافية (اختياري):</label>
+                        <input type="number" id="extra-cost" min="0" step="10000" placeholder="مثال: 500000">
+                    </div>
+                    <div class="form-group">
+                        <label for="currency">العملة:</label>
+                        <select id="currency">
+                            <option value="iqd">دينار عراقي</option>
+                            <option value="usd">دولار أمريكي</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-cta">احسب العائد</button>
+                    <button type="button" id="save-scenario" class="btn btn-primary">حفظ السيناريو</button>
+                    <button type="button" id="compare-scenario" class="btn btn-primary">مقارنة سيناريو</button>
+                    <button type="button" id="print-result" class="btn btn-primary">طباعة/حفظ PDF</button>
+                </form>
+                <div id="calc-summary" class="calc-result" style="display:none;"></div>
+                <div id="calc-result" class="calc-result" style="display:none;"></div>
+                <canvas id="calcChart" width="400" height="180" style="display:none;margin:20px auto;"></canvas>
+                <div id="compare-result" class="calc-result" style="display:none;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الأسئلة الشائعة -->
+    <section id="faq" class="business-section">
+        <div class="container">
+            <h2>الأسئلة الشائعة</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">ما هو مشروع The Lab؟</div>
+                    <div class="faq-answer">The Lab هو مساحة تفاعلية تجمع بين متجر عصري ومطبخ ذاتي، تتيح للشباب تجربة الطهي وشراء منتجات غذائية نادرة في كربلاء.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">ما هو العائد المتوقع على الاستثمار؟</div>
+                    <div class="faq-answer">العائد المتوقع يصل إلى 100% سنوياً، مع إمكانية استرداد رأس المال خلال سنة واحدة فقط.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">ما هي المخاطر الرئيسية للمشروع؟</div>
+                    <div class="faq-answer">تشمل المخاطر: تغيرات السوق، المنافسة، وتغير أذواق المستهلكين. لدينا خطط للتعامل مع كل منها.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">هل يمكنني زيارة الموقع قبل الاستثمار؟</div>
+                    <div class="faq-answer">نعم، نرحب بجميع المستثمرين لزيارة الموقع والتعرف على تفاصيل المشروع عن قرب.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">كيف يمكنني التواصل للاستثمار أو الاستفسار؟</div>
+                    <div class="faq-answer">يمكنك التواصل معنا عبر نموذج التواصل في الموقع أو عبر وسائل التواصل الاجتماعي.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم مقارنة مزايا المشروع -->
+    <section id="comparison" class="business-section">
+        <div class="container">
+            <h2>مقارنة مزايا The Lab مع المشاريع العراقية التقليدية</h2>
+            <div class="business-block">
+                <div class="comparison-table-container">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>الميزة</th>
+                                <th>The Lab</th>
+                                <th>سوبرماركت تقليدي</th>
+                                <th>مطعم تقليدي</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>تجربة تفاعلية للعميل</td>
+                                <td>نعم (مطبخ ذاتي، ورش عمل)</td>
+                                <td>لا</td>
+                                <td>نادراً</td>
+                            </tr>
+                            <tr>
+                                <td>تنوع المنتجات المستوردة</td>
+                                <td>عالي جداً</td>
+                                <td>متوسط</td>
+                                <td>ضعيف</td>
+                            </tr>
+                            <tr>
+                                <td>استهداف فئة الشباب</td>
+                                <td>أساسي</td>
+                                <td>ثانوي</td>
+                                <td>ثانوي</td>
+                            </tr>
+                            <tr>
+                                <td>الابتكار في الخدمة</td>
+                                <td>مرتفع (مطبخ ذاتي، عضوية)</td>
+                                <td>ضعيف</td>
+                                <td>ضعيف</td>
+                            </tr>
+                            <tr>
+                                <td>فرص التوسع والتكرار</td>
+                                <td>كبيرة</td>
+                                <td>محدودة</td>
+                                <td>محدودة</td>
+                            </tr>
+                            <tr>
+                                <td>عائد استثماري سنوي</td>
+                                <td>35%</td>
+                                <td>20-30%</td>
+                                <td>20-40%</td>
+                            </tr>
+                            <tr>
+                                <td>المرونة في التشغيل</td>
+                                <td>عالية (نظام عضوية، فعاليات)</td>
+                                <td>تقليدية</td>
+                                <td>تقليدية</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم مؤشرات الأداء الرئيسية -->
+    <section id="kpi-section" class="kpi-section">
+        <h2>مؤشرات الأداء الرئيسية المتوقعة</h2>
+        <div class="kpi-cards">
+            <div class="kpi-card">
+                <span class="kpi-icon">👥</span>
+                <div class="kpi-value" data-value="3000">0</div>
+                <div class="kpi-label">عدد الزوار الشهري</div>
+                <div class="kpi-desc">2,000 – 4,000 زائر شهرياً</div>
+            </div>
+            <div class="kpi-card">
+                <span class="kpi-icon">🔄</span>
+                <div class="kpi-value" data-value="24">0</div>
+                <div class="kpi-label">معدل التحويل إلى عملاء (%)</div>
+                <div class="kpi-desc">18% – 30%</div>
+            </div>
+            <div class="kpi-card">
+                <span class="kpi-icon">💳</span>
+                <div class="kpi-value" data-value="22000">0</div>
+                <div class="kpi-label">متوسط الإنفاق لكل عميل (د.ع)</div>
+                <div class="kpi-desc">15,000 – 30,000 دينار</div>
+            </div>
+            <div class="kpi-card">
+                <span class="kpi-icon">💰</span>
+                <div class="kpi-value" data-value="28">0</div>
+                <div class="kpi-label">هامش الربح الصافي (%)</div>
+                <div class="kpi-desc">22% – 35%</div>
+            </div>
+            <div class="kpi-card">
+                <span class="kpi-icon">⭐</span>
+                <div class="kpi-value" data-value="90">0</div>
+                <div class="kpi-label">معدل رضا العملاء (%)</div>
+                <div class="kpi-desc">85% – 95%</div>
+            </div>
+            <div class="kpi-card">
+                <span class="kpi-icon">📈</span>
+                <div class="kpi-value" data-value="23">0</div>
+                <div class="kpi-label">نمو الإيرادات السنوي (%)</div>
+                <div class="kpi-desc">18% – 28%</div>
+            </div>
+            <div class="kpi-card">
+                <span class="kpi-icon">🔁</span>
+                <div class="kpi-value" data-value="68">0</div>
+                <div class="kpi-label">معدل الاحتفاظ بالعملاء (%)</div>
+                <div class="kpi-desc">60% – 75%</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم تحليل المخاطر والفرص -->
+    <section id="risk-opportunity" class="business-section">
+        <div class="container">
+            <h2>تحليل المخاطر والفرص</h2>
+            <div class="business-block risk-opportunity-blocks">
+                <div class="risk-block">
+                    <h3>المخاطر المحتملة</h3>
+                    <ul>
+                        <li><b>تغير أذواق المستهلكين:</b> قد تتغير توجهات الشباب بسرعة، مما يتطلب متابعة مستمرة للاتجاهات.</li>
+                        <li><b>المنافسة المحلية:</b> دخول مشاريع مشابهة أو توسع السوبرماركت والمطاعم التقليدية.</li>
+                        <li><b>تقلبات أسعار الاستيراد:</b> ارتفاع أسعار المنتجات المستوردة أو صعوبة توفرها.</li>
+                        <li><b>تحديات التشغيل:</b> صعوبة إيجاد كوادر شابة مدربة أو إدارة الفعاليات.</li>
+                    </ul>
+                </div>
+                <div class="opportunity-block">
+                    <h3>الفرص المتاحة</h3>
+                    <ul>
+                        <li><b>الريادة في السوق:</b> أول مشروع من نوعه في كربلاء يمنحنا أفضلية تنافسية.</li>
+                        <li><b>توسع الفئة المستهدفة:</b> إمكانية استقطاب العائلات والسياح مستقبلاً.</li>
+                        <li><b>تنويع مصادر الدخل:</b> من خلال العضويات، ورش العمل، والفعاليات الخاصة.</li>
+                        <li><b>التحول الرقمي:</b> إمكانية إطلاق تطبيق أو منصة إلكترونية لزيادة الانتشار.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="business-block risk-strategy-block">
+                <h3>استراتيجيات التعامل مع المخاطر</h3>
+                <ul>
+                    <li>رصد الاتجاهات العالمية والمحلية باستمرار وتحديث قائمة المنتجات والخدمات.</li>
+                    <li>تقديم تجارب وفعاليات حصرية يصعب تقليدها.</li>
+                    <li>تنويع الموردين وبناء علاقات قوية مع شركات الاستيراد.</li>
+                    <li>تدريب الكوادر وتطوير مهاراتهم بشكل دوري.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الجدول الزمني -->
+    <section id="timeline" class="timeline-section">
+        <div class="container">
+            <h2>المراحل الزمنية للمشروع</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">شهر 1</div>
+                    <div class="timeline-content">
+                        <h3>التحضير والتخطيط</h3>
+                        <ul>
+                            <li>إعداد دراسة الجدوى النهائية</li>
+                            <li>اختيار الموقع والتراخيص</li>
+                            <li>خطة التصميم الداخلي والخارجي</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">شهر 2-3</div>
+                    <div class="timeline-content">
+                        <h3>التأسيس والتجهيز</h3>
+                        <ul>
+                            <li>تنفيذ الديكور وتجهيز البنية التحتية</li>
+                            <li>شراء المعدات وتوظيف الكوادر</li>
+                            <li>التعاقد مع الموردين</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">شهر 4</div>
+                    <div class="timeline-content">
+                        <h3>الإطلاق التجريبي</h3>
+                        <ul>
+                            <li>تدريب الفريق</li>
+                            <li>تشغيل تجريبي وعروض خاصة</li>
+                            <li>جمع الملاحظات والتحسين</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">شهر 5</div>
+                    <div class="timeline-content">
+                        <h3>الإطلاق الرسمي والتسويق</h3>
+                        <ul>
+                            <li>افتتاح رسمي وحملة تسويقية</li>
+                            <li>إطلاق العضوية والفعاليات</li>
+                            <li>بدء الشراكات المحلية</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">شهر 6-12</div>
+                    <div class="timeline-content">
+                        <h3>التوسع والتطوير</h3>
+                        <ul>
+                            <li>تقييم الأداء وتطوير الخدمات</li>
+                            <li>ورش عمل وفعاليات شهرية</li>
+                            <li>دراسة فرص التوسع الرقمي</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم التواصل -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>تواصل معنا</h2>
+            <div class="contact-grid">
+                <div class="contact-form-container">
+                    <form id="contact-form" class="contact-form">
+                        <h3>للاستفسار أو الاستثمار</h3>
+                        <div class="form-group">
+                            <input type="text" placeholder="الاسم الكامل" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="حسابك على تيليجرام" required>
+                        </div>
+                        <div class="form-group">
+                            <select>
+                                <option value="" disabled selected>نوع الاستفسار</option>
+                                <option value="investment">استثمار</option>
+                                <option value="partnership">شراكة</option>
+                                <option value="info">معلومات إضافية</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="رسالتك" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-cta">إرسال</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h3>معلومات الاتصال</h3>
+                    <div class="info-item">
+                        <div class="info-icon">📍</div>
+                        <p>العراق - كربلاء</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">💬</div>
+                        <p>للتواصل عبر تيليجرام:<br>
+                            <span style="direction:ltr;display:inline-block">
+                                <a href="https://t.me/YourTelegramUsername" target="_blank" style="color:#4ECDC4;font-weight:bold">t.me/YourTelegramUsername</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="download" class="business-section">
+        <div class="container" style="text-align:center">
+            <h2>تحميل الخطة كاملة</h2>
+            <p>يمكنك تحميل خطة العمل بصيغة PDF لمراجعتها أو تقديمها للجهات التمويلية.</p>
+            <a class="btn btn-cta" href="public/The-Lab-Business-Plan.pdf" download>تحميل خطة العمل PDF</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo">The Lab</div>
+                    <p>مختبرك الخاص للنكهات - أول مساحة تفاعلية للطعام في كربلاء</p>
+                </div>
+                <div class="footer-links">
+                    <h4>روابط سريعة</h4>
+                    <a href="#intro">الرئيسية</a>
+                    <a href="#business-plan">خطة العمل</a>
+                    <a href="#investor">للمستثمرين</a>
+                    <a href="#contact">تواصل معنا</a>
+                </div>
+                <div class="social-icons">
+                    <a href="#"><img src="public/images/instagram.svg" alt="Instagram"></a>
+                    <a href="#"><img src="public/images/tiktok.svg" alt="TikTok"></a>
+                    <a href="#"><img src="public/images/youtube.svg" alt="YouTube"></a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© جميع الحقوق محفوظة لـ The Lab ٢٠٢٥.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="public/script.js"></script>
+    <script>
+        // رسم بياني للفئة المستهدفة
+        const ctx1 = document.getElementById('audienceChart').getContext('2d');
+        new Chart(ctx1, {
+            type: 'doughnut',
+            data: {
+                labels: ['شباب', 'طلاب', 'عائلات', 'سياح'],
+                datasets: [{
+                    data: [45, 30, 15, 10],
+                    backgroundColor: ['#4ECDC4', '#FF6B6B', '#FFD93D', '#6A67CE'],
+                    borderColor: '#121212',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: { position: 'bottom', labels: { color: '#fff' } }
+                }
+            }
+        });
+
+        // رسم بياني للإيرادات
+        const ctx2 = document.getElementById('revenueChart').getContext('2d');
+        new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ['تشغيلية', 'ربح شهري', 'ربح نهائي'],
+                datasets: [{
+                    label: 'أرباح وتكاليف (د.ع)',
+                    data: [2800000, 3200000, 400000],
+                    backgroundColor: ['#FF6B6B', '#FFD93D', '#4ECDC4'],
+                    borderColor: '#111',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { color: '#fff' }
+                    },
+                    x: {
+                        ticks: { color: '#fff' }
+                    }
+                },
+                plugins: {
+                    legend: { display: false }
+                }
+            }
+        });
+
+        // رسم بياني لنقطة التعادل
+        const ctx3 = document.getElementById('breakEvenChart').getContext('2d');
+        new Chart(ctx3, {
+            type: 'line',
+            data: {
+                labels: ['شهر 1', 'شهر 2', 'شهر 3', 'شهر 4', 'شهر 5', 'شهر 6', 'شهر 7', 'شهر 8', 'شهر 9', 'شهر 10', 'شهر 11', 'شهر 12'],
+                datasets: [
+                    {
+                        label: 'الإيرادات',
+                        data: [5000000, 8000000, 12000000, 16000000, 20000000, 25000000, 30000000, 35000000, 40000000, 45000000, 50000000, 55000000],
+                        borderColor: '#4ECDC4',
+                        backgroundColor: 'rgba(78, 205, 196, 0.1)',
+                        tension: 0.3,
+                        fill: true
+                    },
+                    {
+                        label: 'التكاليف',
+                        data: [20000000, 22000000, 24000000, 26000000, 28000000, 30000000, 32000000, 34000000, 36000000, 38000000, 40000000, 42000000],
+                        borderColor: '#FF6B6B',
+                        backgroundColor: 'rgba(255, 107, 107, 0.1)',
+                        tension: 0.1,
+                        fill: true
+                    }
+                ]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { color: '#fff' }
+                    },
+                    x: {
+                        ticks: { color: '#fff' }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: { color: '#fff' }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
